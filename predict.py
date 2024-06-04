@@ -108,6 +108,6 @@ def sequence_prediction(path):
     # return frames
 
 
-# test_video = 'test.mp4'
-# print(f"Test video path: {test_video}")
-# test_frames = sequence_prediction(test_video)
+test_video = 'test.mp4'
+print(f"Test video path: {test_video}")
+test_frames = sequence_prediction(test_video)
