@@ -2,14 +2,13 @@ from flask import Flask, render_template, request,jsonify
 from werkzeug.utils import secure_filename
 from datetime import datetime
 import uuid
-from tensorflow.keras.models import load_model
 import os
 import base64
 import requests
 import io, base64
 import cv2
 import matplotlib.pyplot as plt
-from predict import sequence_prediction
+from .predict import sequence_prediction
 
 app = Flask(__name__)
 app.debug = True
