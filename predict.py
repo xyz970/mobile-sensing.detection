@@ -97,7 +97,7 @@ def sequence_prediction(path):
     probabilities = model.predict([frame_features, frame_mask])[0]
 
     for i in np.argsort(probabilities)[::-1]:
-        print(f"  {label[i]}: {probabilities[i] * 100:5.2f}%")
+        print(f"  {label[i]==0}: {probabilities[i] * 100:5.2f}%")
     
     print(f"Sorted  {label[0]}: {probabilities[0] * 100:5.2f}%")
     print(f"Non floated Sorted  {label[0]}: {probabilities[0] * 100}%")
@@ -109,6 +109,6 @@ def sequence_prediction(path):
     # return frames
 
 
-# test_video = '5.mp4'
+# test_video = 'test-5.mp4'
 # print(f"Test video path: {test_video}")
 # test_frames = sequence_prediction(test_video)
