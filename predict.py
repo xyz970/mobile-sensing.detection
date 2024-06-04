@@ -1,5 +1,6 @@
 from flask import jsonify
 import os
+os.environ['OPENBLAS_NUM_THREADS'] = '1'
 import keras
 import tensorflow as tf
 import matplotlib.pyplot as plt

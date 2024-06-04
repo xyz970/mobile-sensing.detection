@@ -6,7 +6,6 @@ from tensorflow.keras.models import load_model
 import os
 import base64
 import requests
-import numpy as np
 import io, base64
 import cv2
 import matplotlib.pyplot as plt
