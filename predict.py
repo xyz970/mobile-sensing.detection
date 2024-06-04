@@ -1,12 +1,10 @@
 from flask import jsonify
 import os
 import keras
-from imutils import paths
 import tensorflow as tf
 import matplotlib.pyplot as plt
 import pandas as pd
 import numpy as np
-import imageio
 import cv2
 
 
@@ -109,6 +107,6 @@ def sequence_prediction(path):
     # return frames
 
 
-# test_video = 'test-5.mp4'
+# test_video = 'test.mp4'
 # print(f"Test video path: {test_video}")
 # test_frames = sequence_prediction(test_video)
