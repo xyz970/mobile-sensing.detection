@@ -25,5 +25,3 @@ def index():
         file.save(folderPath)
         return sequence_prediction(folderPath)
 
-if __name__ == '__main__':
-    app.run()
