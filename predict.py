@@ -98,7 +98,7 @@ def sequence_prediction(path):
     val = []
     probabilities_arr = []
     for i in np.argsort(probabilities)[::-1]:
-        val.append([label[i],float(f"{probabilities[i] * 100:5.2f}")])
+        val.append([label[i],f"{probabilities[i] * 100:5.2f}"])
         print(f"  {label[i]}: {probabilities[i] * 100:5.2f}%")
     
     print(val)
