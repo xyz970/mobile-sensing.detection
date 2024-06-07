@@ -95,19 +95,23 @@ def sequence_prediction(path):
     model = tf.keras.models.load_model('cnn_rnn.h5')
     probabilities = model.predict([frame_features, frame_mask])[0]
 
+    val = []
+    probabilities_arr = []
     for i in np.argsort(probabilities)[::-1]:
-        print(f"  {label[i]==0}: {probabilities[i] * 100:5.2f}%")
+        val.append([label[i],float(f"{probabilities[i] * 100:5.2f}")])
+        print(f"  {label[i]}: {probabilities[i] * 100:5.2f}%")
     
-    print(f"Sorted  {label[0]}: {probabilities[0] * 100:5.2f}%")
-    print(f"Non floated Sorted  {label[0]}: {probabilities[0] * 100}%")
+    print(val)
+    print(f"Sorted  {val[0][0]}: {val[0][1]}%")
+    # print(f"Non floated Sorted  {label[1]}: {probabilities[1] * 100}%")
     data = {
-        'probabilities': f"{probabilities[0] * 100:5.2f}",
-        'label': label[0],
+        'probabilities': val[0][1],
+        'label': val[0][0],
     }
     return jsonify({'data':data})
     # return frames
 
 
-# test_video = 'test.mp4'
+# test_video = '3.mp4'
 # print(f"Test video path: {test_video}")
 # test_frames = sequence_prediction(test_video)
